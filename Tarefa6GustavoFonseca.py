@@ -53,7 +53,7 @@ p(a)=800000*np.exp((a-1994)/40), com "p" representando a população em pessoas 
 "a" representando o ano escolhido'''
 
 #Teste a) 
-a=np.arange(1994,2020)#Intervalo de tempo entre 1994 e 2020.
+a=np.arange(1994,2021)#Intervalo de tempo entre 1994 e 2020.
 p=800000*np.exp((a-1994)/40)
 plt.figure()
 plt.plot(a,p,color='red',linestyle='--')
