@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Aug 21 14:35:44 2019
-
 @author: gustavo.fonseca
 """
 import matplotlib.pyplot as plt
@@ -36,13 +35,17 @@ t1=t[t['Ano']>=1961]
 i=t1['Inflação']
 t2=pd.read_csv('file:///C:/Users/gustavo.fonseca/Downloads/pibAnual.csv')
 p=t2['Variação anual do PIB real (%)']
+m,b=f1.regressao(p,i)
+c2=f1.corr(p,i)
 plt.figure()
 plt.plot(p,i,marker='o',color='g',linestyle='')
+plt.plot(p,(m*p)+b,label='Reta de Regressão')
 plt.title('Exercício 2')
 plt.ylabel('Inflação anual (%)')
 plt.xlabel('Variação do PIB (%)')
+plt.legend()
 plt.grid()
-c2=f1.corr(p,i)
+
 
 print()
 
@@ -62,10 +65,3 @@ plt.xlabel('Idade (Anos)')
 plt.legend()
 plt.grid()
 plt.show()
-
-
-
-
-
-
-
